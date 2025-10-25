@@ -7,6 +7,10 @@ import {
   IonFab,
   IonFabButton,
   IonIcon,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonImg,
 } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { PhotoService } from '../services/photo';
@@ -24,6 +28,10 @@ import { PhotoService } from '../services/photo';
     IonFab,
     IonFabButton,
     IonIcon,
+    IonGrid,
+    IonRow,
+    IonCol,
+    IonImg,
   ],
 })
 export class Tab2Page {
