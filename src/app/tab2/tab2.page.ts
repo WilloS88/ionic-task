@@ -12,8 +12,8 @@ import {
   IonCol,
   IonImg,
 } from '@ionic/angular/standalone';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { PhotoService } from '../services/photo';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-tab2',
@@ -24,7 +24,6 @@ import { PhotoService } from '../services/photo';
     IonToolbar,
     IonTitle,
     IonContent,
-    ExploreContainerComponent,
     IonFab,
     IonFabButton,
     IonIcon,
@@ -32,12 +31,17 @@ import { PhotoService } from '../services/photo';
     IonRow,
     IonCol,
     IonImg,
+    CommonModule,
   ],
 })
 export class Tab2Page {
   constructor(public photoService: PhotoService) {}
-
+  
+  async ngOnInit() {
+    await this.photoService.loadSaved();
+  }
   addPhotoToGallery() {
     this.photoService.addNewToGallery();
   }
+
 }
